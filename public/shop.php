@@ -1,7 +1,7 @@
 <!-- Shop page -->
 <?php include "../includes/header.php"?>
 <div class="product-main">
-    <h3 id="deal-subtitle">Browse Our Collection of Quality Crochet Kits!</h3>
+    <h1 class="title">Browse Our Shop!</h1>
     <?php include "../includes/connectdb.php";?>
 </div>
 <div class='product-grid'>

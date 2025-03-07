@@ -1,8 +1,8 @@
 <!-- Home page -->
 <?php include "../includes/header.php";?>
 <div class="product-main">
-    <h2 id="title">Kit Collective</h2>
-    <h1 id="deal-subtitle">Welcome, have a cozy yarn-filled day!</h1>
+    <h2 class="title">Welcome to Kit Collective</h2>
+    <h1 class="subtitle">Have a cozy yarn-filled day!</h1>
     <?php include "../includes/connectdb.php";?>
 </div>
 <div>

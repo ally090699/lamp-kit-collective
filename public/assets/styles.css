@@ -116,7 +116,7 @@ footer .foottop{
   footer .foottop a {
     color:#58422a;
     text-decoration: none;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: 1.05rem;
     transition: color 0.3s ease;
   }
   
@@ -127,7 +127,7 @@ footer .foottop{
   footer .foottop ul {
     padding: 30px;
     list-style: none;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: 1.05rem;
   }
   
   .foottop .footright {
@@ -150,7 +150,39 @@ footer .foottop{
   }
 
   /* Home Page */
-  #title {
+  div .carousel{
+    margin: 1.5rem 2rem;
+  }
+
+  /* Login */
+  .login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0rem;
+  }
+
+  .login-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5rem 0rem;
+  }
+
+  .login-label{
+    font-family: "Dosis", sans-serif;
+    color: #976f48ca;
+  }
+
+  .login-input{
+    padding: 0.5rem;
+    width: 400px;
+    color: #58422a;
+  }
+  
+  /* Global */
+  .title {
     text-align: center;
     font-size: 300%;
     padding-top: 30px;
@@ -158,7 +190,7 @@ footer .foottop{
     color: #cca885b9;
   }
   
-  #deal-subtitle {
+  .subtitle {
     text-align: center;
     font-size: 200%;
     font-family:"Dosis", sans-serif;
@@ -166,6 +198,3 @@ footer .foottop{
     padding: 20px;
   }
   
-  div .carousel{
-    margin: 1.5rem 2rem;
-  }
