@@ -9,9 +9,6 @@ $connection = mysqli_connect(
     $dbConfig['port']);
 
 if (mysqli_connect_errno()){
-    echo "<h5>Database connection failed!</h5>";
     die("Database connection failed: ".mysqli_connect_error()."(".mysqli_connect_errno().")");
-} else {
-    echo "<h5>Database connection successful!</h5>";
 }
 ?>
