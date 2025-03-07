@@ -1,0 +1,65 @@
+/* index.php - Product catalog */
+/* Product Grid - Responsive Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusts column count dynamically */
+    gap: 20px; /* Spacing between items */
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Individual Product Card */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Product Image */
+.product-card-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover; /* Ensures uniform image cropping */
+}
+
+/* Product Name & Price */
+.product-card-name,
+.product-card-price {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Button Container */
+.product-card-btndiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Add to Cart Button */
+.product-card-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.product-card-btn:hover {
+    background-color: #0056b3;
+}
