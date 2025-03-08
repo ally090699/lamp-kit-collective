@@ -11,8 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <script src="/lamp-kit-collective/public/assets/scripts.js" defer></script>
 </head>
 <body>
+<?php session_start(); ?>
 <nav>
     <div>
         <!-- Brand -->
@@ -26,14 +28,17 @@
             <a href="/lamp-kit-collective/public/index.php">Home</a>
             <a href="/lamp-kit-collective/public/shop.php">Shop</a>
 
-            <!-- Customers (not logged in) -->
-            <a href="/lamp-kit-collective/public/cart.php">Cart 🛒</a>
-            <a href="/lamp-kit-collective/public/login.php">Login</a>
-            <a href="/lamp-kit-collective/public/register.php">Register</a>
-
             <!-- Customers (logged in) -->
-            <a href="/lamp-kit-collective/public/profile.php">Profile</a>
-            <button>Logout</button>
+            <?php if (isset($_SESSION['username'])): ?>
+                <a href="/lamp-kit-collective/public/cart.php">Cart 🛒</a>
+                <a href="/lamp-kit-collective/public/profile.php">Profile</a>
+                <a href="/lamp-kit-collective/public/logout.php">Logout</a>
+            <!-- Customers (not logged in) -->
+            <?php else: ?>
+                <a href="/lamp-kit-collective/public/cart.php">Cart 🛒</a>
+                <a href="/lamp-kit-collective/public/login.php">Login</a>
+                <a href="/lamp-kit-collective/public/register.php">Register</a>
+            <?php endif; ?>
         </div>
     </div>
 </nav>

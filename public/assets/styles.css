@@ -155,7 +155,7 @@ footer .foottop{
   }
 
   /* Login */
-  .login-form{
+  .in-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,22 +163,35 @@ footer .foottop{
     margin: 2rem 0rem;
   }
 
-  .login-section{
+  .in-section{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 0.5rem 0rem;
   }
 
-  .login-label{
+  .in-label{
     font-family: "Dosis", sans-serif;
     color: #976f48ca;
   }
 
-  .login-input{
+  .in-input{
     padding: 0.5rem;
     width: 400px;
     color: #58422a;
+  }
+
+  .in-btn{
+    padding: 0.5rem 2rem;
+    font-family: "Montserrat";
+    background-color: #e8d9ca78;
+    border: solid 1px #b3977a52;
+    box-shadow: #58422a;
+  }
+  .in-btn:hover{
+    background-color: #b3977aa5;
+    border: solid 1px #e8d9ca78;
+    color: white;
   }
   
   /* Global */
@@ -198,3 +211,39 @@ footer .foottop{
     padding: 20px;
   }
   
+  /* Profile */
+  .profile-section{
+    margin: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .profile-content{
+    color: #58422a;
+    font-family: "Dosis", sans-serif;
+    font-size: 1.25rem;
+  }
+
+  .profile-edit-btn{
+    padding: 0.5rem 2rem;
+    font-family: "Montserrat";
+    background-color: #e8d9ca78;
+    border: solid 1px #b3977a52;
+    box-shadow: #58422a;
+  }
+
+  .profile-edit-btn:hover{
+    background-color: #b3977aa5;
+    border: solid 1px #e8d9ca78;
+    color: white;
+  }
+
+  #edit-profile-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 1rem;
+  }
