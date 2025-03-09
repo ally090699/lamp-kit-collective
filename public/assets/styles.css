@@ -34,6 +34,11 @@
     transform: scale(1.05);
 }
 
+.product-card-link{
+  text-decoration: none;
+  color:#58422a;
+}
+
 /* Product Image */
 .product-card-img {
     width: 200px;
@@ -59,7 +64,7 @@
 
 /* Add to Cart Button */
 .product-card-btn {
-    background-color: #007bff;
+    background-color: #0073ff;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -69,7 +74,7 @@
 }
 
 .product-card-btn:hover {
-    background-color: #0056b3;
+    background-color: #0355b9;
 }
 
 /* Header */
@@ -94,7 +99,7 @@ nav img{
 nav div .menu a, nav div .menu button{
     margin: 0.5rem 1rem;
     text-decoration: none;
-    color: blue;
+    color: #0073ff;
     background-color: transparent;
     border: none;
     font-family: 'Times New Roman', Times, serif;
@@ -121,7 +126,7 @@ footer .foottop{
   }
   
   footer .foottop a:hover {
-    color: #010bc4;
+    color: #0073ff;
   }
   
   footer .foottop ul {
@@ -136,7 +141,7 @@ footer .foottop{
   }
   
   .foottop .footright .name {
-    color: #010bc4;
+    color: #0073ff;
     font-weight: 600;
   }
   
@@ -247,3 +252,86 @@ footer .foottop{
     text-align: center;
     margin: 1rem 1rem;
   }
+
+  /* Product Details Page */
+  @media (max-width: 800px) {
+    .product-content{
+      flex-direction: column;
+    }
+  }
+  .product-content{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  .product-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .product-sectmain{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .product-sectinfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .product-image{
+    width: 15rem;
+  }
+
+  .product-title{
+    color: #58422a;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .product-header{
+    color: #cca885b9;
+    font-size: 1rem;
+  }
+  
+  .product-details{
+    color: #58422a;
+  }
+
+  .product-price{
+    color: #0073ff;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .product-btndiv{
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .product-btn{
+    background-color: #0073ff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .product-btn:hover {
+    background-color: #0355b9;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
