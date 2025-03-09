@@ -35,7 +35,6 @@
                 <a href="/lamp-kit-collective/public/logout.php">Logout</a>
             <!-- Customers (not logged in) -->
             <?php else: ?>
-                <a href="/lamp-kit-collective/public/cart.php">Cart 🛒</a>
                 <a href="/lamp-kit-collective/public/login.php">Login</a>
                 <a href="/lamp-kit-collective/public/register.php">Register</a>
             <?php endif; ?>
