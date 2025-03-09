@@ -32,7 +32,7 @@
             }
         }
 
-        
+        $cart_subtotal=0;
 
         $query = "SELECT * FROM cart WHERE user_id = $user_id";
         $result = mysqli_query($connection, $query);
@@ -84,6 +84,7 @@
                 </div>
 
                 <?php
+                $cart_subtotal = $cart_subtotal+$product_subtotal;
             }
         } else {
             echo "
@@ -94,13 +95,17 @@
             </div>
             ";
         }
+        $cart_subtotal=round($cart_subtotal, 2);
+        $hst=round($cart_subtotal*(0.13), 2);
+        $shipping_fee=3.99;
+        $total=round($cart_subtotal + $hst + $shipping_fee, 2);
         ?>
     </div>
     <div class="cart-details">
-        <p class="cart-details-header">Subtotal</p>
-        <p class="cart-details-header">HST (13%)</p>
-        <p class="cart-details-header">Shipping Fee</p>
-        <p class="cart-details-header">Total</p>
+        <p class="cart-details-header">Subtotal: <?php echo htmlspecialchars($cart_subtotal); ?></p>
+        <p class="cart-details-header">HST (13%): <?php echo htmlspecialchars($hst); ?></p>
+        <p class="cart-details-header">Shipping Fee: <?php echo htmlspecialchars($shipping_fee); ?></p>
+        <p class="cart-details-header">Total: <?php echo htmlspecialchars($total); ?></p>
     </div>
 </div>
  <?php include "../includes/footer.php"?>
