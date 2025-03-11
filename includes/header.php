@@ -16,11 +16,11 @@
 <body>
 <?php session_start(); ?>
 <nav>
-    <div>
+    <div id='navbar'>
         <!-- Brand -->
-        <img 
+        <img
             src="../public/assets/images/banner.jpg"
-            alt="Kit Collective Logo" 
+            alt="Kit Collective Logo"
             class="header-logo"
         />
         <!-- Menu -->

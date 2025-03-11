@@ -5,8 +5,10 @@
     <?php 
     include "../includes/connectdb.php";
 
+    $error="";
+
     if (!isset($_SESSION["user_id"])) {
-        $_SESSION["error"] = "You must be logged in to add items to the cart.";
+        $error = "You must be logged in to add items to the cart.";
         header("Location: login.php");
         exit;
     }
@@ -14,7 +16,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["product_id"]) || empty($_POST["quantity"])) {
-            echo "<p>Error: Shop post request failed</p>";
+            $error = "Error: Shop post request failed.";
             exit;
         }
     
@@ -32,14 +34,14 @@
             $update_result = mysqli_query($connection, $update_query);
 
             if (!$update_result){
-                die("Database query update shop page failed.");
+                $error = "Database query update shop page failed.";
             }
         } else {
             $insert_query="INSERT INTO cart (user_id, product_id, quantity) VALUES ($user_id, $product_id, $quantity)";
             $insert_result=mysqli_query($connection,$insert_query);
 
             if (!$insert_result){
-                die("Database query insert shop page failed.");
+                $error = "Database query insert shop page failed.";
             }
         }
     }
@@ -51,8 +53,8 @@
     $result = mysqli_query($connection, $query);
 
     if (!$result){
-        echo "<h6>Products failed to load. Please try again.</h6>";
-        die("Databases query failed");
+        $error="Error retrieving products.";
+        exit;
     }
 
     while ($product = mysqli_fetch_assoc($result)){
@@ -77,7 +79,9 @@
         <?php
     }
 
+
     mysqli_free_result($result);
 ?>
 </div>
+<p class='error-statement'><?php if ($error) {echo htmlspecialchars($error);} ?></p>
  <?php include "../includes/footer.php"?>

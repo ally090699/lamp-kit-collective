@@ -44,7 +44,7 @@
     width: 200px;
     height: 200px;
     border-radius: 5px;
-    object-fit: cover; /* Ensures uniform image cropping */
+    object-fit: cover;
 }
 
 /* Product Name & Price */
@@ -96,15 +96,33 @@ nav img{
     object-fit: cover;
 }
 
-nav div .menu a, nav div .menu button{
+nav div .menu a, 
+nav div .menu button {
     margin: 0.5rem 1rem;
     text-decoration: none;
-    color: #0073ff;
+    color: #58422a;
     background-color: transparent;
     border: none;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.05rem;
-    color:#58422a;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav div .menu a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #58422a;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav div .menu a:hover::before {
+    width: 100%;
+    left: 0;
 }
 
 /* Footer */
@@ -159,6 +177,15 @@ footer .foottop{
     margin: 1.5rem 2rem;
   }
 
+  div .carousel img{
+    border-radius: 10px;
+  }
+
+  .home-page{
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
   /* Login */
   .in-form{
     display: flex;
@@ -189,14 +216,20 @@ footer .foottop{
   .in-btn{
     padding: 0.5rem 2rem;
     font-family: "Montserrat";
-    background-color: #e8d9ca78;
-    border: solid 1px #b3977a52;
-    box-shadow: #58422a;
-  }
-  .in-btn:hover{
-    background-color: #b3977aa5;
-    border: solid 1px #e8d9ca78;
+    background-color: #0073ff;
     color: white;
+    border: none;
+    box-shadow: #0355b9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .product-btn:hover {
+    background-color: #0355b9;
+}
+  .in-btn:hover{
+    background-color: #0355b9;
   }
   
   /* Global */
@@ -225,7 +258,7 @@ footer .foottop{
     justify-content: space-between;
   }
 
-  .profile-content{
+  .profile-content, .order-header{
     color: #58422a;
     font-family: "Dosis", sans-serif;
     font-size: 1.25rem;
@@ -251,6 +284,58 @@ footer .foottop{
     align-items: center;
     text-align: center;
     margin: 1rem 1rem;
+  }
+
+  .order-container{
+    display: flex;
+    flex-direction: row;
+    border: solid 1px #b3977a52;
+    background-color: #e8d9ca78;
+    box-shadow: #58422a;
+    padding: 0.8rem;
+    margin: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .prev-order{
+    margin-bottom: 2rem;
+  }
+
+  .order-content{
+    display: flex;
+    flex-direction: row;
+    border: solid 1px #b3977a52;
+    background-color: #e8d9ca78;
+    box-shadow: #58422a;
+    padding: 0.8rem;
+    margin: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .order-container:hover{
+    background-color: #b3977aa5;
+    border: solid 1px #e8d9ca78;
+    color: white;
+  }
+
+  .order-sectleft{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: left;
+  }
+
+  .order-sectright{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    flex: 1;
+  }
+
+  .header{
+    margin-left: 0.8rem;
+    font-family:"Montserrat";
+    color: #a5805cb9;
   }
 
   /* Product Details Page */
@@ -353,6 +438,7 @@ footer .foottop{
   padding: 0.5rem;
   margin: 0.8rem;
   margin-left: 0rem;
+  border-radius: 10px;
 }
 .cart-product{
   display: flex;
@@ -371,6 +457,7 @@ footer .foottop{
   max-height: 6rem;
   border-radius: 10%;
   flex: 0.5;
+  object-fit: cover;
 }
 
  .cart-product div{
@@ -384,6 +471,7 @@ footer .foottop{
  .cart-product div .cart-product-title{
   flex: 2;
   font-size: 1rem;
+  text-align: left;
  }
 
  .cart-product-section{
@@ -391,6 +479,7 @@ footer .foottop{
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+  text-align: center;
  }
 
  .cart-product-section p{
@@ -433,3 +522,162 @@ footer .foottop{
   gap: 0.7rem;
  }
  
+ .error-statement{
+  text-align: center;
+ }
+
+ .cart-details form button{
+  border: 1.5px solid #0073ff;
+  color:#0073ff;
+  border-radius: 10px;
+  padding: 0px 6px;
+  margin: 0px 1px;
+  background-color: transparent;
+ }
+
+ .cart-details form button:hover{
+  border: 1.5px solid #0073ff8b;
+  color:white;
+  background-color: #0073ff;
+ }
+
+ /* Confirm */
+ .confirm-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 10px 50px 10px;
+ }
+
+ .confirm-page a{
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1.5px solid #0073ff;
+  color:#0073ff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0px 1px;
+  background-color: transparent;
+ }
+
+ .confirm-page a:hover{
+  border: 1.5px solid #0073ff8b;
+  color:white;
+  background-color: #0073ff;
+ }
+
+ /* Order(dynamic) */
+ .order-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0px 10px 30px 10px;
+ }
+
+ .order-link{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+ }
+
+ .order-page a{
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1.5px solid #0073ff;
+  color:#0073ff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  width: 17rem;
+  background-color: transparent;
+ }
+
+ .order-page a:hover{
+  border: 1.5px solid #0073ff8b;
+  color:white;
+  background-color: #0073ff;
+ }
+
+ #contact-form{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 1rem;
+ }
+
+ .radio-section {
+  width: 100%;
+  max-width: 435px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 400px;
+}
+
+#radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none; 
+}
+
+.visible {
+  display: block;
+}
+
+/* About */
+.aboutsect-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 0.5rem 1rem 2rem 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aboutsect-image {
+  width: 100%;
+  max-width: 20rem;
+  border-radius: 20px;
+}
+
+.aboutsect-text {
+  text-align: left;
+  text-indent: 2rem;
+}
+
+@media (min-width: 1000px) {
+  .aboutsect-content {
+    flex-direction: row;
+    align-items: flex-start; 
+  }
+
+  .aboutsect-image {
+    width: 45%;
+  }
+
+  .aboutsect-text {
+    width: 50%;
+  }
+}
+
+.active {
+  font-weight: bold;
+}

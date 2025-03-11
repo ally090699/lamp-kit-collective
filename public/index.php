@@ -1,11 +1,11 @@
 <!-- Home page -->
 <?php include "../includes/header.php";?>
-<div class="product-main">
-    <h2 class="title">Welcome to Kit Collective</h2>
-    <h1 class="subtitle">Have a cozy yarn-filled day!</h1>
-    <?php include "../includes/connectdb.php";?>
-</div>
-<div>
+<div class="home-page">
+    <div class="product-main">
+        <h2 class="title">Welcome to Kit Collective</h2>
+        <h1 class="deal-subtitle subtitle">Have a cozy yarn-filled day!</h1>
+        <?php include "../includes/connectdb.php";?>
+    </div>
     <div
         id="carouselExampleAutoplaying"
         class="carousel slide"

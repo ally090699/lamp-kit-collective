@@ -3,10 +3,10 @@
         <div class="footleft">
             <ul>
             <li>
-                <a href="/lamp-kit-collective/public/index.php">About Us</a>
+                <a href="/lamp-kit-collective/public/about.php">About Us</a>
             </li>
             <li>
-                <a href="/lamp-kit-collective/public/shop.php">Contact</a>
+                <a href="/lamp-kit-collective/public/contact.php">Contact</a>
             </li>
             <li>
                 <a>FAQs</a>

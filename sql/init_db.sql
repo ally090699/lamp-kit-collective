@@ -92,10 +92,10 @@ CREATE TABLE form_submissions (
     email VARCHAR(50) NOT NULL,
     reason ENUM('General_Inquiry', 'Pricing', 'Product_Info', 'Shipping', 'Other') NOT NULL,
     message TEXT NOT NULL,
-    product_id INT,
+    sku VARCHAR(255),
     submitted_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
+    FOREIGN KEY (sku) REFERENCES products(sku) ON DELETE CASCADE
 );
 
 -- Inserting data (copied from other project, fix)

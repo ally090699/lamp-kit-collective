@@ -11,13 +11,14 @@
     $_SESSION["error"] = "";
     $_SESSION["success"] = "";
 
+    $user_id=$_SESSION["user_id"];
     $username=$_SESSION["username"];
     $user_email=$_SESSION["email"];
     $display=false;
 
     $username = mysqli_real_escape_string($connection, $username);
 
-    $query='SELECT * FROM users WHERE username="'.$username.'"';
+    $query="SELECT * FROM users WHERE username='$username'";
 
     $result=mysqli_query($connection,$query);
     if (!$result){
@@ -85,6 +86,13 @@
             }
         }
     }
+
+    $orderquery="SELECT * FROM orders WHERE user_id=$user_id";
+
+    $orderresult=mysqli_query($connection,$orderquery);
+    if (!$orderresult){
+        $_SESSION["error"] = "Failed query (Profile, orders).";
+    }
 ?>
 <h1 class='title'><?php echo htmlspecialchars($user['first_name']) . " " . htmlspecialchars($user['last_name']); ?>'s Profile</h1>
 
@@ -136,5 +144,21 @@
     <input class='in-btn' type='submit' value='Update Profile'>
 </form>
 
-
+<div class="prev-order">
+    <h3 class="header" >Previous Orders</h3>
+    <?php while ($order = mysqli_fetch_assoc($orderresult)){ ?>
+        <div class="order-container" onclick="window.location.href='order.php?id=<?php echo $order['order_id']; ?>'">
+            <div class="order-sectleft">
+                <h5 class="order-header">Order ID: #<?php echo htmlspecialchars($order['order_id']);?></h5>
+                <h5 class="order-header">Payment Method: <?php echo htmlspecialchars(ucfirst(str_replace('_', ' ', $order['payment_method'])));;?></h5>
+                <h5 class="order-header">Created: <?php echo htmlspecialchars(date("F j, Y, g:i A", strtotime($order['created_at'])));?></h5>
+            </div>
+            
+            <div class="order-sectright">
+                <h5 class="order-header">Total: $<?php echo htmlspecialchars(number_format($order['total_price'], 2)); ?></h5>
+                <h5 class="order-header">Status: <?php echo htmlspecialchars(ucfirst($order['order_status']));?></h5>
+            </div>
+        </div>
+    <?php } ?>
+</div>
  <?php include "../includes/footer.php"?>
