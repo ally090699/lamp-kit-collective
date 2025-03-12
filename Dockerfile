@@ -13,6 +13,9 @@ RUN echo "ServerName lamp-kit-collective.onrender.com" >> /etc/apache2/apache2.c
 
 RUN echo "DirectoryIndex index.php index.html" > /etc/apache2/conf-available/custom.conf && \
     a2enconf custom
+    
+RUN sed -i 's|/var/www/html|/var/www/html/lamp-kit-collective/public|g' /etc/apache2/sites-available/000-default.conf && \
+    sed -i 's|/var/www/html|/var/www/html/lamp-kit-collective/public|g' /etc/apache2/apache2.conf
 
 EXPOSE 80
 
