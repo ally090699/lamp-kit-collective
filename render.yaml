@@ -8,10 +8,7 @@ services:
     envVars:
       - key: DATABASE_URL
         value: "mysql://$DB_USER:$DB_PASS@$DB_HOST:DB_PORT/$DB_NAME"
-        fromDatabase:
-          name: lamp-kit-collective
-          property: connectionString
     disk:
       name: data
-      mountPath: /var/www/html/lamp-kit-collective/public/assets/uploads
+      mountPath: /var/www/html/public/assets/uploads
       sizeGB: 1
