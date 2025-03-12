@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,12 +15,11 @@
     <script src="/lamp-kit-collective/public/assets/scripts.js" defer></script>
 </head>
 <body>
-<?php session_start(); ?>
 <nav>
     <div id='navbar'>
         <!-- Brand -->
         <img
-            src="../public/assets/images/banner.jpg"
+            src="./public/assets/images/banner.jpg"
             alt="Kit Collective Logo"
             class="header-logo"
         />
