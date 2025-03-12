@@ -24,6 +24,8 @@ RUN echo "DirectoryIndex index.php index.html" > /etc/apache2/conf-available/cus
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf && \
     sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/apache2.conf
 
+RUN echo "Listen 0.0.0.0:80" >> /etc/apache2/ports.conf
+
 # Expose port 80 for the Apache server
 EXPOSE 80
 
