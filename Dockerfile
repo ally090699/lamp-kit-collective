@@ -30,7 +30,6 @@ EXPOSE 80
 
 # Force Apache to listen on all network interfaces
 RUN echo "Listen 80" > /etc/apache2/ports.conf
-RUN echo "Listen 0.0.0.0:80" >> /etc/apache2/ports.conf
 
 # Start Apache (alternative way to keep it running)
 CMD ["apachectl", "-D", "FOREGROUND"]
