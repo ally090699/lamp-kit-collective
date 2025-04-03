@@ -1,0 +1,27 @@
+# Deny access to hidden files (starting with .)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<Directory "/usr/local/var/www/lamp-kit-collective/config">
+    Require all denied
+</Directory>
+
+<Directory /usr/local/var/www/lamp-kit-collective>
+    AllowOverride All
+</Directory>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 month"
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE image/webp
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(webp)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+</IfModule>
