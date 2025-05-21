@@ -10,7 +10,8 @@ CREATE TABLE users (
     last_name VARCHAR(255),
     phone_number VARCHAR(20),
     created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)
+    updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+    is_admin TINYINT(1) NOT NULL DEFAULT 0
 );
 
 CREATE TABLE categories (
@@ -111,7 +112,7 @@ VALUES("Aria Bralette Top",
 "This Simple Summer Crochet Kit includes everything you need to create your own comfortable and stylish Aria Bralette Top." , 
 10.99, 
 1, 
-"/assets/images/product-1.jpg", 
+"./assets/images/product-1.jpg", 
 "SMR-TOP-001",
 10);
 
@@ -120,7 +121,7 @@ VALUES("Totoro",
 "This Adorable Amigurumi Crochet Kit includes everything you need to create your own adorable and squishy Totoro Amigurumi toy." , 
 12.99, 
 2, 
-"/assets/images/product-2.jpg", 
+"./assets/images/product-2.jpg", 
 "SML-AMI-001",
 20);
 
@@ -129,7 +130,7 @@ VALUES("Leila Mesh Pullover",
 "This Simple Summer Crochet Kit includes everything you need to create your own comfortable and stylish Leila Mesh Pullover." , 
 12.99, 
 1, 
-"/assets/images/product-3.jpg", 
+"./assets/images/product-3.jpg", 
 "SMR-TOP-002",
 10);
 
@@ -138,7 +139,7 @@ VALUES("Elena Book Bag",
 "This Practically Soft Crochet Kit includes everything you need to create your own lightweight and stylish Elena Book Bag." , 
 14.99, 
 3, 
-"/assets/images/product-4.jpg", 
+"./assets/images/product-4.jpg", 
 "CRO-BAG-001",
 10);
 
